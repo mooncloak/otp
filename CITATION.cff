@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+    - alias: "kodetools@mooncloak.com"
+      website: "https://kodetools.mooncloak.codes"
+contact:
+    - alias: "kodetools@mooncloak.com"
+      website: "https://kodetools.mooncloak.codes"
+title: "otp"
+type: "software"
+abstract: "Kotlin multiplatform one time password implementation."
+license: "Apache-2.0"
+keywords:
+    - "kotlin"
+    - "multiplatform"
+    - "otp"
+    - "one time password"
+repository-code: "https://github.com/mooncloak/otp"
+url: "https://github.com/mooncloak/otp"
