@@ -12,7 +12,7 @@ import kotlin.time.Duration.Companion.seconds
 /**
  * @see [Java Reference Implementation](https://github.com/BastiaanJansen/otp-java/blob/main/src/main/java/com/bastiaanjansen/otp/TOTPGenerator.java)
  */
-public class TOTPGenerator public constructor(
+public class TOTPGenerator internal constructor(
     secret: ByteArray,
     @Suppress("MemberVisibilityCanBePrivate") public val period: Duration = 30.seconds,
     @Suppress("MemberVisibilityCanBePrivate") public val clock: Clock = Clock.System,

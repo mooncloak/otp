@@ -1,0 +1,64 @@
+public final class com/mooncloak/kodetools/otp/core/HMACAlgorithm : java/lang/Enum {
+	public static final field SHA1 Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public static final field SHA224 Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public static final field SHA256 Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public static final field SHA384 Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public static final field SHA512 Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getHMACName ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public static fun values ()[Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+}
+
+public final class com/mooncloak/kodetools/otp/core/HOTPGenerator {
+	public static final field Companion Lcom/mooncloak/kodetools/otp/core/HOTPGenerator$Companion;
+	public final fun generate (J)Ljava/lang/String;
+	public final fun getAlgorithm ()Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public final fun getPasswordLength ()I
+	public final fun verify (Ljava/lang/String;JI)Z
+	public static synthetic fun verify$default (Lcom/mooncloak/kodetools/otp/core/HOTPGenerator;Ljava/lang/String;JIILjava/lang/Object;)Z
+}
+
+public final class com/mooncloak/kodetools/otp/core/HOTPGenerator$Companion {
+}
+
+public final class com/mooncloak/kodetools/otp/core/HmacAlgorithmKt {
+	public static final fun getMac (Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;[B)Lorg/kotlincrypto/macs/hmac/Hmac;
+}
+
+public final class com/mooncloak/kodetools/otp/core/Otp {
+	public static final field INSTANCE Lcom/mooncloak/kodetools/otp/core/Otp;
+	public final fun hotp ([BILcom/mooncloak/kodetools/otp/core/HMACAlgorithm;)Lcom/mooncloak/kodetools/otp/core/HOTPGenerator;
+	public static synthetic fun hotp$default (Lcom/mooncloak/kodetools/otp/core/Otp;[BILcom/mooncloak/kodetools/otp/core/HMACAlgorithm;ILjava/lang/Object;)Lcom/mooncloak/kodetools/otp/core/HOTPGenerator;
+	public final fun totp-WPwdCS8 ([BJLkotlinx/datetime/Clock;ILcom/mooncloak/kodetools/otp/core/HMACAlgorithm;)Lcom/mooncloak/kodetools/otp/core/TOTPGenerator;
+	public static synthetic fun totp-WPwdCS8$default (Lcom/mooncloak/kodetools/otp/core/Otp;[BJLkotlinx/datetime/Clock;ILcom/mooncloak/kodetools/otp/core/HMACAlgorithm;ILjava/lang/Object;)Lcom/mooncloak/kodetools/otp/core/TOTPGenerator;
+}
+
+public final class com/mooncloak/kodetools/otp/core/SecretGenerator {
+	public static final field INSTANCE Lcom/mooncloak/kodetools/otp/core/SecretGenerator;
+	public final fun generate (I)[B
+	public final fun generate (Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;)[B
+	public static synthetic fun generate$default (Lcom/mooncloak/kodetools/otp/core/SecretGenerator;IILjava/lang/Object;)[B
+}
+
+public final class com/mooncloak/kodetools/otp/core/SecretGeneratorKt {
+	public static final fun generateSecret (Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;)[B
+}
+
+public final class com/mooncloak/kodetools/otp/core/TOTPGenerator {
+	public synthetic fun <init> ([BJLkotlinx/datetime/Clock;ILcom/mooncloak/kodetools/otp/core/HMACAlgorithm;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun at (J)Ljava/lang/String;
+	public final fun at (Lkotlinx/datetime/Instant;)Ljava/lang/String;
+	public final fun at (Lkotlinx/datetime/LocalDate;)Ljava/lang/String;
+	public final fun durationUntilNextTimeWindow-5sfh64U (Lkotlinx/datetime/Clock;)J
+	public static synthetic fun durationUntilNextTimeWindow-5sfh64U$default (Lcom/mooncloak/kodetools/otp/core/TOTPGenerator;Lkotlinx/datetime/Clock;ILjava/lang/Object;)J
+	public final fun getAlgorithm ()Lcom/mooncloak/kodetools/otp/core/HMACAlgorithm;
+	public final fun getClock ()Lkotlinx/datetime/Clock;
+	public final fun getPasswordLength ()I
+	public final fun getPeriod-UwyO8pc ()J
+	public final fun now (Lkotlinx/datetime/Clock;)Ljava/lang/String;
+	public static synthetic fun now$default (Lcom/mooncloak/kodetools/otp/core/TOTPGenerator;Lkotlinx/datetime/Clock;ILjava/lang/Object;)Ljava/lang/String;
+	public final fun verify (Ljava/lang/String;ILkotlinx/datetime/Clock;)Z
+	public static synthetic fun verify$default (Lcom/mooncloak/kodetools/otp/core/TOTPGenerator;Ljava/lang/String;ILkotlinx/datetime/Clock;ILjava/lang/Object;)Z
+}
+

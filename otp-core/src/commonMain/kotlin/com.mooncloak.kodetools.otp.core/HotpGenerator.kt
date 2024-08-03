@@ -8,7 +8,7 @@ import kotlin.math.pow
  *
  * @see [Java Reference Implementation](https://github.com/BastiaanJansen/otp-java/blob/main/src/main/java/com/bastiaanjansen/otp/HOTPGenerator.java)
  */
-public class HOTPGenerator public constructor(
+public class HOTPGenerator internal constructor(
     private val secret: ByteArray,
     public val passwordLength: Int = DEFAULT_PASSWORD_LENGTH,
     public val algorithm: HMACAlgorithm = DEFAULT_HMAC_ALGORITHM
@@ -17,7 +17,7 @@ public class HOTPGenerator public constructor(
     init {
         require(secret.isNotEmpty()) { "Secret must not be empty" }
 
-        require(passwordLengthIsValid(passwordLength)) { "Password length must be between 6 and 8 digits" }
+        require(passwordLength in 6..8) { "Password length must be between 6 and 8 digits." }
     }
 
     public fun verify(code: String, counter: Long, delayWindow: Int = 0): Boolean {
@@ -109,9 +109,6 @@ public class HOTPGenerator public constructor(
             padChar = '0'
         )
     }
-
-    private fun passwordLengthIsValid(passwordLength: Int): Boolean =
-        passwordLength in 6..8
 
     public companion object {
 
